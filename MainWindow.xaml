@@ -21,7 +21,7 @@
                     <TextBlock Text ="Showcard Gothic" FontFamily="Showcard Gothic" />
                                         
                 </ComboBox>
-                <ComboBox Margin="5" Padding="5" SelectedIndex="1" Width="70" SizeChanged="ComboBox_SizeChanged" >
+                <ComboBox Margin="5" Padding="5" SelectedIndex="1" Width="70" SelectionChanged="ComboBox_SelectionChanged_1" >
                     <TextBlock Text ="12"/>
                     <TextBlock Text ="14"/>
                     <TextBlock Text ="16"/>

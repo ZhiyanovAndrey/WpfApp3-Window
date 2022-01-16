@@ -34,9 +34,15 @@ namespace WpfApp3_Window
             }
         }
 
-        private void ComboBox_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
 
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            string fontSize = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            if (TextBox != null)
+            {
+
+                TextBox.FontSize = Convert.ToDouble(fontSize);
+            }
         }
     }
 }
