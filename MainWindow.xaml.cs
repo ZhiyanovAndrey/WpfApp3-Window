@@ -44,20 +44,6 @@ namespace WpfApp3_Window
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            TextBox.FontWeight = FontWeights.Bold;
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            TextBox.FontStyle = FontStyles.Italic;
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            TextBox.TextDecorations = TextDecorations.Underline;
-        }
 
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -74,6 +60,36 @@ namespace WpfApp3_Window
             {
                 TextBox.Foreground = Brushes.Black;
             }
+        }
+
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            TextBox.FontWeight = FontWeights.Normal;
+        }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            TextBox.FontWeight = FontWeights.Bold;
+        }
+
+        private void ToggleButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            TextBox.FontStyle = FontStyles.Italic;
+        }
+
+        private void ToggleButton_Unchecked_1(object sender, RoutedEventArgs e)
+        {
+            TextBox.FontStyle = FontStyles.Normal;
+        }
+
+        private void ToggleButton_Checked_2(object sender, RoutedEventArgs e)
+        {
+            TextBox.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void ToggleButton_Unchecked_2(object sender, RoutedEventArgs e)
+        {
+            TextBox.TextDecorations = null;
         }
     }
 }

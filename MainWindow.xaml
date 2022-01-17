@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3_Window"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="SimpleTextEditor" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ToolBarTray Grid.Row="0">
-            <ToolBar  Margin="5" Padding="5">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" >
+        <ToolBarTray Grid.Row="0" Background="#FFD7D219">
+            <ToolBar  Margin="5" Padding="5" Background="#FFD7D219">
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged"  >
                     <TextBlock Text ="Arial"/>
                     <TextBlock Text ="Verdana"/>
                     <TextBlock Text ="Times New Roman"/>
@@ -25,14 +25,18 @@
                     <TextBlock Text ="12"/>
                     <TextBlock Text ="14"/>
                     <TextBlock Text ="16"/>
+                    <TextBlock Text ="24"/>
+                    <TextBlock Text ="32"/>
+                    <TextBlock Text ="48"/>
+                    <TextBlock Text ="54"/>
                 </ComboBox>
             </ToolBar>
-            <ToolBar Margin="5" Padding="5">
-                <Button Content="B" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" Click="Button_Click" />
-                <Button Content="I" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" FontStyle="Italic" Click="Button_Click_1" />
-                <Button Content="⍜" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" Click="Button_Click_2"/>
+            <ToolBar Margin="5" Padding="5" Background="#FFD7D219">
+                <ToggleButton Content="B" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold"  Unchecked="ToggleButton_Unchecked" Checked="ToggleButton_Checked"  />
+                <ToggleButton Content="I" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" FontStyle="Italic" Checked="ToggleButton_Checked_1" Unchecked="ToggleButton_Unchecked_1"  />
+                <ToggleButton Content="⍜" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" Checked="ToggleButton_Checked_2" Unchecked="ToggleButton_Unchecked_2" />
             </ToolBar>
-            <ToolBar Margin="5" Padding="5">
+            <ToolBar Margin="5" Padding="5" Background="#FFD7D219">
                 <StackPanel VerticalAlignment="Center"> 
                 <RadioButton Content="Красный" Checked="RadioButton_Checked" /> 
                 <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked_1"  />  
