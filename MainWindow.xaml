@@ -28,14 +28,14 @@
                 </ComboBox>
             </ToolBar>
             <ToolBar Margin="5" Padding="5">
-                <Button Content="B" Height="35" Width="35" FontSize="16" Background="Blue" FontWeight="Bold" />
-                <Button Content="/" Height="35" Width="35" FontSize="16" Background="Blue" />
-                <Button Content="⍜" Height="35" Width="35" FontSize="16" Background="Blue" />
+                <Button Content="B" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" Click="Button_Click" />
+                <Button Content="I" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" FontStyle="Italic" Click="Button_Click_1" />
+                <Button Content="⍜" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" Click="Button_Click_2"/>
             </ToolBar>
             <ToolBar Margin="5" Padding="5">
                 <StackPanel VerticalAlignment="Center"> 
-                <RadioButton Content="Красный"/> 
-                <RadioButton Content="Черный" IsChecked="True" />  
+                <RadioButton Content="Красный" Checked="RadioButton_Checked" /> 
+                <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked_1"  />  
                 </StackPanel>
 
             </ToolBar>

@@ -40,9 +40,41 @@ namespace WpfApp3_Window
             string fontSize = ((sender as ComboBox).SelectedItem as TextBlock).Text;
             if (TextBox != null)
             {
-
                 TextBox.FontSize = Convert.ToDouble(fontSize);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox.FontWeight = FontWeights.Bold;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TextBox.FontStyle = FontStyles.Italic;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            TextBox.TextDecorations = TextDecorations.Underline;
+        }
+
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (TextBox != null)
+            {
+                TextBox.Foreground = Brushes.Red;
+            }
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (TextBox != null)
+            {
+                TextBox.Foreground = Brushes.Black;
             }
         }
     }
 }
+
