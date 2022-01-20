@@ -6,12 +6,16 @@
         xmlns:local="clr-namespace:WpfApp3_Window"
         mc:Ignorable="d"
         Title="SimpleTextEditor" Height="450" Width="800">
+   
+    
     <Grid>
+       
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ToolBarTray Grid.Row="0" Background="#FFD7D219">
+        <ToolBarTray Grid.Row="1" Background="#FFD7D219">
             <ToolBar  Margin="5" Padding="5" Background="#FFD7D219">
                 <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged"  >
                     <TextBlock Text ="Arial"/>
@@ -44,9 +48,19 @@
 
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="TextBox" Grid.Row="1" Margin="5" Padding="5" FontSize="16" TextWrapping="Wrap">
-        </TextBox> 
-
+        <TextBox x:Name="TextBox" Grid.Row="2" Margin="5" Padding="5" FontSize="16" TextWrapping="Wrap">
+        </TextBox>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Background="#FF656060">
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Открыть" Click="MenuItem_Click_1" />
+                    <MenuItem Header="Сохранить" Click="MenuItem_Click_2" />
+                    <Separator/>
+                    <MenuItem Header="Закрыть" Click="MenuItem_Click"/>
+                </MenuItem>
+                
+            </Menu>
+        </DockPanel>
 
     </Grid>
 </Window>

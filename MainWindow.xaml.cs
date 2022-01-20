@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,6 +92,29 @@ namespace WpfApp3_Window
         private void ToggleButton_Unchecked_2(object sender, RoutedEventArgs e)
         {
             TextBox.TextDecorations = null;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Текстовые (*.txt)|*.txt|Все файлы (*.*)|*.*";
+            if (open.ShowDialog() == true)
+            {
+                TextBox.Text = File.ReadAllText(open.FileName);
+            }
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter= "Текстовые (*.txt)|*.txt|Все файлы (*.*)|*.*";
+            if (save.ShowDialog() == true)
+                File.WriteAllText(save.FileName, TextBox.Text);
         }
     }
 }
