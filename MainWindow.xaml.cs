@@ -94,12 +94,17 @@ namespace WpfApp3_Window
             TextBox.TextDecorations = null;
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+
+
+
+ 
+
+        private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void OpenExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Текстовые (*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -107,9 +112,10 @@ namespace WpfApp3_Window
             {
                 TextBox.Text = File.ReadAllText(open.FileName);
             }
+
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
             save.Filter= "Текстовые (*.txt)|*.txt|Все файлы (*.*)|*.*";

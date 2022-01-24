@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:WpfApp3_Window"
         mc:Ignorable="d"
         Title="SimpleTextEditor" Height="450" Width="800">
-   
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExecuted"/>
+        <CommandBinding Command="Open" Executed="OpenExecuted"/>
+        <CommandBinding Command="Save" Executed="SaveExecuted"/>
+        
+    </Window.CommandBindings>
     
     <Grid>
        
@@ -53,12 +58,15 @@
         <DockPanel Grid.Row="0" Grid.ColumnSpan="3">
             <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Background="#FF656060">
                 <MenuItem Header="Файл">
-                    <MenuItem Header="Открыть" Click="MenuItem_Click_1" />
-                    <MenuItem Header="Сохранить" Click="MenuItem_Click_2" />
+                    <MenuItem Command="Open"/>
+                    <MenuItem Command="Save" />
                     <Separator/>
-                    <MenuItem Header="Закрыть" Click="MenuItem_Click"/>
+                    <MenuItem Command="local:MyCommands.Exit"/>
                 </MenuItem>
-                
+                <MenuItem Header="Правка">
+                    <MenuItem Command="Copy"/>
+                    <MenuItem Command="Paste"/>
+                </MenuItem>
             </Menu>
         </DockPanel>
 
