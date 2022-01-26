@@ -4,17 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3_Window"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
         Title="SimpleTextEditor" Height="450" Width="800">
     <Window.CommandBindings>
         <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExecuted"/>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
         <CommandBinding Command="Save" Executed="SaveExecuted"/>
-        
     </Window.CommandBindings>
-    
+   
     <Grid>
-       
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -22,22 +23,22 @@
         </Grid.RowDefinitions>
         <ToolBarTray Grid.Row="1" Background="#FFD7D219">
             <ToolBar  Margin="5" Padding="5" Background="#FFD7D219">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged"  >
-                    <TextBlock Text ="Arial"/>
+                <ComboBox ItemsSource="{StaticResource family}" Margin="5" Padding="5" SelectedIndex="1" Width="200" >
+                    <!--<TextBlock Text ="Arial"/>
                     <TextBlock Text ="Verdana"/>
                     <TextBlock Text ="Times New Roman"/>
                     <TextBlock Text ="Comic Sans MS" FontFamily="Comic Sans MS" />
-                    <TextBlock Text ="Showcard Gothic" FontFamily="Showcard Gothic" />
-                                        
+                    <TextBlock Text ="Showcard Gothic" FontFamily="Showcard Gothic" />-->
+
                 </ComboBox>
-                <ComboBox Margin="5" Padding="5" SelectedIndex="1" Width="70" SelectionChanged="ComboBox_SelectionChanged_1" >
-                    <TextBlock Text ="12"/>
+                <ComboBox ItemsSource="{StaticResource size}" Margin="5" Padding="5" SelectedIndex="1" Width="70"  >
+                    <!--<TextBlock Text ="12"/>
                     <TextBlock Text ="14"/>
                     <TextBlock Text ="16"/>
                     <TextBlock Text ="24"/>
                     <TextBlock Text ="32"/>
                     <TextBlock Text ="48"/>
-                    <TextBlock Text ="54"/>
+                    <TextBlock Text ="54"/>-->
                 </ComboBox>
             </ToolBar>
             <ToolBar Margin="5" Padding="5" Background="#FFD7D219">
@@ -46,9 +47,9 @@
                 <ToggleButton Content="⍜" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" Checked="ToggleButton_Checked_2" Unchecked="ToggleButton_Unchecked_2" />
             </ToolBar>
             <ToolBar Margin="5" Padding="5" Background="#FFD7D219">
-                <StackPanel VerticalAlignment="Center"> 
-                <RadioButton Content="Красный" Checked="RadioButton_Checked" /> 
-                <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked_1"  />  
+                <StackPanel VerticalAlignment="Center">
+                    <RadioButton Content="Красный" Checked="RadioButton_Checked" />
+                    <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked_1"  />
                 </StackPanel>
 
             </ToolBar>

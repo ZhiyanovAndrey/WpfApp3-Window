@@ -108,7 +108,7 @@ namespace WpfApp3_Window
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Текстовые (*.txt)|*.txt|Все файлы (*.*)|*.*";
-            if (open.ShowDialog() == true)
+            if (open.ShowDialog() == true) 
             {
                 TextBox.Text = File.ReadAllText(open.FileName);
             }
