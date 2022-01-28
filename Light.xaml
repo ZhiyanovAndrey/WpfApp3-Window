@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="WindowStyle">
+        <Setter Property="Control.Background" Value="White"/>
+    </Style>
+    <Style x:Key="TextBoxStyle" BasedOn="{StaticResource WindowStyle}">
+        <Setter Property="TextBlock.Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="ButtonStyle" BasedOn="{StaticResource WindowStyle}">
+        <Setter Property="Button.Foreground" Value="Black"/>
+        <Setter Property="Button.BorderBrush" Value="Black"/>
+    </Style>
+    <Style x:Key="ToolBarStyle" BasedOn="{StaticResource WindowStyle}">
+        <Setter Property="ToolBar.Background" Value="#FFD7D219"/>
+    </Style>
+
+</ResourceDictionary>

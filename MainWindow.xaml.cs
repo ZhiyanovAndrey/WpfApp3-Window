@@ -25,10 +25,30 @@ namespace WpfApp3_Window
         public MainWindow()
         {
             InitializeComponent();
+            List<string> styles = new List<string>() { "Светлая тема", "Темная тема" }; //заполняем ComboBox
+            styleBox.ItemsSource = styles; //обращаемся к ComboBox в качестве источника устанавливаем переменную styles
+            styleBox.SelectedItem = 0; //по умолчанию выбор Светлая тема
+            styleBox.SelectionChanged += ThemeChange; //обработчик события которое срабатывает при смене выбора
+        }
+
+        private void ThemeChange(object sender, SelectionChangedEventArgs e)
+        {
+            int styleIndex = styleBox.SelectedIndex; // 0 или 1 при выборе темы
+            Uri uri = new Uri("Light.xaml", UriKind.Relative); //зададим экземпляру класса Uri через конструктор
+                                                               //связали переменную uri c путем к файлу для светлой темы, путь относительный
+            if (styleIndex == 1)
+            {
+                uri = new Uri("Dark.xaml", UriKind.Relative);
+
+            }
+            ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resource); 
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {   
             string fontName = ((sender as ComboBox).SelectedItem as TextBlock).Text;
             if (TextBox != null)
             {

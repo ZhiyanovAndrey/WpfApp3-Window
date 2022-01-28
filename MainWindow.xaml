@@ -7,8 +7,8 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
-        Title="SimpleTextEditor" Height="450" Width="800">
-    <Window.CommandBindings>
+        Title="SimpleTextEditor" Height="450" Width="800" Style="{DynamicResource WindowStyle}">
+    <Window.CommandBindings >
         <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExecuted"/>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
         <CommandBinding Command="Save" Executed="SaveExecuted"/>
@@ -20,10 +20,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+
         </Grid.RowDefinitions>
-        <ToolBarTray Grid.Row="1" Background="#FFD7D219">
-            <ToolBar  Margin="5" Padding="5" Background="#FFD7D219">
-                <ComboBox ItemsSource="{StaticResource family}" Margin="5" Padding="5" SelectedIndex="1" Width="200" >
+        <ToolBarTray Grid.Row="1" Style="{DynamicResource ToolBarStyle}">
+            <ToolBar  Margin="5" Padding="5" Style="{DynamicResource ToolBarStyle}">
+                <ComboBox ItemsSource="{StaticResource family}" Margin="5" Padding="5" SelectedIndex="1" Width="200" Style="{DynamicResource TextBoxStyle}">
                     <!--<TextBlock Text ="Arial"/>
                     <TextBlock Text ="Verdana"/>
                     <TextBlock Text ="Times New Roman"/>
@@ -31,7 +33,7 @@
                     <TextBlock Text ="Showcard Gothic" FontFamily="Showcard Gothic" />-->
 
                 </ComboBox>
-                <ComboBox ItemsSource="{StaticResource size}" Margin="5" Padding="5" SelectedIndex="1" Width="70"  >
+                <ComboBox ItemsSource="{StaticResource size}" Margin="5" Padding="5" SelectedIndex="1" Width="70" Style="{DynamicResource TextBoxStyle}" >
                     <!--<TextBlock Text ="12"/>
                     <TextBlock Text ="14"/>
                     <TextBlock Text ="16"/>
@@ -41,12 +43,12 @@
                     <TextBlock Text ="54"/>-->
                 </ComboBox>
             </ToolBar>
-            <ToolBar Margin="5" Padding="5" Background="#FFD7D219">
-                <ToggleButton Content="B" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold"  Unchecked="ToggleButton_Unchecked" Checked="ToggleButton_Checked"  />
-                <ToggleButton Content="I" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" FontStyle="Italic" Checked="ToggleButton_Checked_1" Unchecked="ToggleButton_Unchecked_1"  />
-                <ToggleButton Content="⍜" Height="35" Width="35" FontSize="16" Background="LightBlue" FontWeight="Bold" Checked="ToggleButton_Checked_2" Unchecked="ToggleButton_Unchecked_2" />
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ToolBarStyle}">
+                <ToggleButton Content="B" Height="35" Width="35" FontSize="16" Style="{DynamicResource ButtonStyle}" Background="LightBlue" FontWeight="Bold"  Unchecked="ToggleButton_Unchecked" Checked="ToggleButton_Checked"  />
+                <ToggleButton Content="I" Height="35" Width="35" FontSize="16" Style="{DynamicResource ButtonStyle}" Background="LightBlue" FontWeight="Bold" FontStyle="Italic" Checked="ToggleButton_Checked_1" Unchecked="ToggleButton_Unchecked_1"  />
+                <ToggleButton Content="⍜" Height="35" Width="35" FontSize="16" Style="{DynamicResource ButtonStyle}" Background="LightBlue" FontWeight="Bold" Checked="ToggleButton_Checked_2" Unchecked="ToggleButton_Unchecked_2" />
             </ToolBar>
-            <ToolBar Margin="5" Padding="5" Background="#FFD7D219">
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ToolBarStyle}">
                 <StackPanel VerticalAlignment="Center">
                     <RadioButton Content="Красный" Checked="RadioButton_Checked" />
                     <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked_1"  />
@@ -54,22 +56,26 @@
 
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="TextBox" Grid.Row="2" Margin="5" Padding="5" FontSize="16" TextWrapping="Wrap">
+        <TextBox x:Name="TextBox" Grid.Row="2" Margin="5" Padding="5" FontSize="16" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle}">
+          
         </TextBox>
         <DockPanel Grid.Row="0" Grid.ColumnSpan="3">
             <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Background="#FF656060">
-                <MenuItem Header="Файл">
+                <MenuItem Header="Файл" Background="#FF656060">
                     <MenuItem Command="Open"/>
                     <MenuItem Command="Save" />
                     <Separator/>
                     <MenuItem Command="local:MyCommands.Exit"/>
                 </MenuItem>
-                <MenuItem Header="Правка">
+                <MenuItem Header="Правка" Background="#FF656060">
                     <MenuItem Command="Copy"/>
                     <MenuItem Command="Paste"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
 
+        <DockPanel Grid.Row="3" Background="#FF656060">
+            <ComboBox x:Name="styleBox" SelectedItem="0" Background="#FF656060" Style="{DynamicResource TextBoxStyle}" BorderBrush="{x:Null}" />
+        </DockPanel>
     </Grid>
 </Window>
