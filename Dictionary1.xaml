@@ -19,5 +19,7 @@
         <sys:String>18</sys:String>
         <sys:String>20</sys:String>
         <sys:String>24</sys:String>
+        <sys:String>34</sys:String>
+        <sys:String>44</sys:String>
     </col:ArrayList>
 </ResourceDictionary>
